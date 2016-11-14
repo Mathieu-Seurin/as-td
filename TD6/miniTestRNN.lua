@@ -23,10 +23,8 @@ graph.dot(net.fg, 'miniRNN', 'miniRNN')
 
 --letter_batches = {{1,1},{2,1},{1,2}}
 --                 a a   b b   a b
-local a = torch.Tensor({{1,0,0}})
-local b = torch.Tensor({{0,1,0}})
-local c = torch.Tensor({{0,0,1}})
-
+local a = torch.Tensor({{1,0}})
+local b = torch.Tensor({{0,1}})
 local init = torch.ones(N,1)
 
 local letter_batches = { {init, a:clone() },{init, b:clone()},{init, a:clone()}, {init, b:clone()}}
