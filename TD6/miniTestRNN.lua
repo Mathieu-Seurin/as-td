@@ -23,15 +23,14 @@ graph.dot(net.fg, 'miniRNN', 'miniRNN')
 
 --letter_batches = {{1,1},{2,1},{1,2}}
 --                 a a   b b   a b
-a = torch.Tensor({{1,0}})
-b = torch.Tensor({{0,1}})
-init = torch.ones(N,1)
+local a = torch.Tensor({{1,0}})
+local b = torch.Tensor({{0,1}})
+local init = torch.ones(N,1)
 
+local letter_batches = { {init, a:clone() },{init, b:clone()},{init, a:clone()}, {init, b:clone()}}
+local ytrad = torch.Tensor({2,1,1,1})
 
-letter_batches = { {init,a},{init,a},{init,b},{init,b} }
-ytrad = torch.Tensor({1,1,2,2})
-
-cardBatches = #letter_batches
+local cardBatches = #letter_batches
 
 print("Number of batches", cardBatches)
 
