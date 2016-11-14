@@ -1,0 +1,60 @@
+digraph G {
+	graph [bb="0,0,394.09,783.1"];
+	node [label="\N",
+		shape=oval
+	];
+	n1	 [height=1.041,
+		label="DECODE1 (1)\nmodule = nn.gModule\lreverseMap = {}",
+		pos="197.05,148.43",
+		tooltip="[./creationRNN.lua]:60_",
+		width=2.7499];
+	n2	 [height=1.041,
+		label="Node2\ninput = {}\lreverseMap = {}",
+		pos="197.05,37.477",
+		tooltip="[[C]]:-1_",
+		width=2.1606];
+	n1 -> n2	 [pos="e,197.05,75.149 197.05,110.85 197.05,102.67 197.05,93.893 197.05,85.366"];
+	n3	 [height=1.3356,
+		label="GRU1 (3)\nmodule = nn.gModule\lreverseMap = {}\lmapindex = {Node4,Node5}",
+		pos="197.05,269.99",
+		tooltip="[./creationRNN.lua]:59_",
+		width=3.457];
+	n3 -> n1	 [pos="e,197.05,186.02 197.05,221.74 197.05,213.29 197.05,204.5 197.05,196.07"];
+	n4	 [height=1.041,
+		label="Z ZE FIRST (4)\nmodule = nn.Identity\lreverseMap = {}",
+		pos="94.045,391.55",
+		tooltip="[./creationRNN.lua]:53_",
+		width=2.6124];
+	n4 -> n3	 [pos="e,158.49,315.75 123.84,355.97 132.62,345.77 142.44,334.37 151.96,323.32"];
+	n5	 [height=1.041,
+		label="input1 (5)\nmodule = nn.Identity\lreverseMap = {}",
+		pos="300.05,391.55",
+		tooltip="[./creationRNN.lua]:58_",
+		width=2.6124];
+	n5 -> n3	 [pos="e,235.6,315.75 270.25,355.97 261.47,345.77 251.65,334.37 242.13,323.32"];
+	n6	 [height=1.3356,
+		label="Node6\ninput = {}\lselectindex = 1\lreverseMap = {}",
+		pos="102.05,513.11",
+		tooltip="[[C]]:-1_-1",
+		width=2.1606];
+	n6 -> n4	 [pos="e,96.493,429.14 98.883,464.86 98.318,456.41 97.73,447.62 97.166,439.19"];
+	n7	 [height=1.3356,
+		label="Node7\ninput = {}\lselectindex = 2\lreverseMap = {}",
+		pos="292.05,513.11",
+		tooltip="[[C]]:-1_-2",
+		width=2.1606];
+	n7 -> n5	 [pos="e,297.6,429.14 295.21,464.86 295.77,456.41 296.36,447.62 296.92,439.19"];
+	n8	 [height=1.041,
+		label="Node8\nreverseMap = {}\lnSplitOutputs = 2",
+		pos="189.05,634.67",
+		tooltip="[[C]]:-1_ split at [.../mathieu/torch/install/share/lua/5.1/nngraph/gmodule.lua]:96-mnode",
+		width=2.2392];
+	n8 -> n6	 [pos="e,133.5,557.34 163.65,598.77 156.06,588.34 147.58,576.68 139.39,565.43"];
+	n8 -> n7	 [pos="e,256.13,555.79 218.29,599.73 227.95,588.52 238.9,575.8 249.35,563.66"];
+	n9	 [height=1.041,
+		label="Node9\ninput = {}\lreverseMap = {}",
+		pos="189.05,745.62",
+		tooltip="[[C]]:-1_",
+		width=2.1606];
+	n9 -> n8	 [pos="e,189.05,672.34 189.05,708.04 189.05,699.87 189.05,691.09 189.05,682.56"];
+}

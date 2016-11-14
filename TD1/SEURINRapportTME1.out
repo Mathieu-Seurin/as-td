@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{Batch gradient descent}{}% 1
+\BOOKMARK [1][-]{section.2}{Stochastic gradient descent}{}% 2
+\BOOKMARK [1][-]{section.3}{Mini-batch gradient descent}{}% 3
+\BOOKMARK [1][-]{section.4}{Raffinement de la descente de gradient}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Ajouter de l'inertie}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Nesterov accelerated gradient}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{Adagrad}{}% 7
+\BOOKMARK [1][-]{section.6}{Adadelta}{}% 8

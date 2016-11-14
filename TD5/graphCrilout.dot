@@ -1,0 +1,84 @@
+digraph G {
+	graph [bb="0,0,524.8,1630"];
+	node [label="\N",
+		shape=oval
+	];
+	n1	 [height=1.6303,
+		label="Node1\ninput = {Tensor[1]}\lmodule = nn.Tanh\lreverseMap = {}\lgradOutput = {Tensor[1]}",
+		pos="284.3,190.86",
+		tooltip="[TME5.lua]:46_",
+		width=3.1623];
+	n2	 [height=1.3356,
+		label="Node2\ninput = {Tensor[1]}\lreverseMap = {}\lgradOutput = {Tensor[1]}",
+		pos="284.3,48.083",
+		tooltip="[[C]]:-1_",
+		width=3.1623];
+	n1 -> n2	 [pos="e,284.3,96.295 284.3,131.79 284.3,123.39 284.3,114.74 284.3,106.36"];
+	n3	 [height=1.6303,
+		label="Node3\ninput = {Tensor[2]}\lmodule = nn.Linear(2 -> 1)\lreverseMap = {}\lgradOutput = {Tensor[1]}",
+		pos="284.3,344.24",
+		tooltip="[TME5.lua]:45_",
+		width=3.3195];
+	n3 -> n1	 [pos="e,284.3,249.8 284.3,285.14 284.3,276.9 284.3,268.37 284.3,259.96"];
+	n4	 [height=1.9249,
+		label="Node4\ninput = {Tensor[2],Tensor[2]}\lmapindex = {Node5,Node6}\lmodule = nn.CMulTable\lreverseMap = {}\lgradOutput = {Tensor[2]}",
+		pos="284.3,508.22",
+		tooltip="[TME5.lua]:44_",
+		width=3.6141];
+	n4 -> n3	 [pos="e,284.3,403.05 284.3,438.53 284.3,430.13 284.3,421.55 284.3,413.16"];
+	n5	 [height=1.6303,
+		label="Node5\ninput = {Tensor[2]}\lmodule = nn.Identity\lreverseMap = {}\lgradOutput = {Tensor[2]}",
+		pos="149.3,978.97",
+		tooltip="[TME5.lua]:39_",
+		width=3.1623];
+	n5 -> n4	 [pos="e,253.71,575.63 160.46,920.32 175.2,847.76 203.54,719.76 239.3,613.52 242.44,604.2 246.06,594.55 249.86,585.06"];
+	n6	 [height=1.6303,
+		label="Node6\ninput = {Tensor[2]}\lmodule = nn.ReLU\lreverseMap = {}\lgradOutput = {Tensor[2]}",
+		pos="362.3,672.21",
+		tooltip="[TME5.lua]:43_",
+		width=3.1623];
+	n6 -> n4	 [pos="e,316.28,575.63 335.24,615.01 330.56,605.28 325.62,595.03 320.74,584.89"];
+	n7	 [height=1.6303,
+		label="Node7\ninput = {{Tensor[2],Tensor[1]}}\lreverseMap = {}\lselectindex = 1\lgradOutput = {Tensor[2]}",
+		pos="139.3,1132.3",
+		tooltip="[[C]]:-1_-1",
+		width=3.8694];
+	n7 -> n5	 [pos="e,145.49,1037.7 143.14,1073.3 143.69,1065 144.25,1056.4 144.81,1047.9"];
+	n8	 [height=1.6303,
+		label="Node8\ninput = {Tensor[2]}\lmodule = nn.L1Penalty\lreverseMap = {}\lgradOutput = {Tensor[2]}",
+		pos="390.3,825.59",
+		tooltip="[TME5.lua]:42_",
+		width=3.1623];
+	n8 -> n6	 [pos="e,372.94,730.71 379.63,766.93 378.04,758.31 376.38,749.35 374.76,740.55"];
+	n9	 [height=1.6303,
+		label="Node9\ninput = {{Tensor[2],Tensor[1]}}\lreverseMap = {}\lnSplitOutputs = 2\lgradOutput = {{Tensor[2],Tensor[1]}}",
+		pos="248.3,1439.1",
+		tooltip="[[C]]:-1_ split at [.../mathieu/torch/install/share/lua/5.1/nngraph/gmodule.lua]:96-mnode",
+		width=4.5373];
+	n9 -> n7	 [pos="e,159.71,1190.4 227.8,1380.8 209.41,1329.4 182.44,1254 163.11,1199.9"];
+	n13	 [height=1.6303,
+		label="Node13\ninput = {{Tensor[2],Tensor[1]}}\lreverseMap = {}\lselectindex = 2\lgradOutput = {Tensor[1]}",
+		pos="384.3,1285.7",
+		tooltip="[[C]]:-1_-2",
+		width=3.8694];
+	n9 -> n13	 [pos="e,335.76,1340.8 297.78,1383 307.94,1371.7 318.69,1359.8 329.03,1348.2"];
+	n10	 [height=1.6303,
+		label="Node10\ninput = {Tensor[1]}\lmodule = nn.Linear(1 -> 2)\lreverseMap = {}\lgradOutput = {Tensor[2]}",
+		pos="405.3,978.97",
+		tooltip="[TME5.lua]:41_",
+		width=3.3195];
+	n10 -> n8	 [pos="e,396.02,884.34 399.59,920.31 398.75,911.84 397.88,903.05 397.02,894.4"];
+	n11	 [height=1.3356,
+		label="Node11\ninput = {Tensor[2],Tensor[1]}\lreverseMap = {}\lgradOutput = {{Tensor[2],Tensor[1]}}",
+		pos="248.3,1581.9",
+		tooltip="[[C]]:-1_",
+		width=4.5373];
+	n11 -> n9	 [pos="e,248.3,1498.3 248.3,1533.6 248.3,1525.5 248.3,1516.8 248.3,1508.3"];
+	n12	 [height=1.6303,
+		label="Node12\ninput = {Tensor[1]}\lmodule = nn.Identity\lreverseMap = {}\lgradOutput = {Tensor[1]}",
+		pos="410.3,1132.3",
+		tooltip="[TME5.lua]:40_",
+		width=3.1623];
+	n12 -> n10	 [pos="e,407.21,1037.7 408.38,1073.3 408.11,1065 407.82,1056.4 407.54,1047.9"];
+	n13 -> n12	 [pos="e,400.42,1190.8 394.2,1227.1 395.67,1218.5 397.19,1209.7 398.68,1201"];
+}
