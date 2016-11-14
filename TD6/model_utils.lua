@@ -105,8 +105,9 @@ end
 function loadCritRNN(N)
    c = nn.ParallelCriterion()
    for t = 1,N do
-      print("t",t)
-      c:add(nn.CrossEntropyCriterion())
+      crit = nn.CrossEntropyCriterion()
+      crit.nll.sizeAverage = false
+      c:add(crit)
    end
    return c
 

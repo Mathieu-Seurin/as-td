@@ -9,9 +9,9 @@ vocab = torch.load('vocab.t7')
 
 local batchSize = 1
 local M = 2
-local N = 1
+local N = 2
 local learning_rate = 0.1
-local maxEpoch = 1000
+local maxEpoch = 10000
 
 --nngraph.setDebug(true) 
 
@@ -25,10 +25,13 @@ graph.dot(net.fg, 'miniRNN', 'miniRNN')
 --                 a a   b b   a b
 local a = torch.Tensor({{1,0}})
 local b = torch.Tensor({{0,1}})
-local init = torch.ones(N,1)
 
-local letter_batches = { {init, a:clone() },{init, b:clone()},{init, a:clone()}, {init, b:clone()}}
-local ytrad = torch.Tensor({2,1,1,1})
+local init = torch.ones(1,N)
+
+lol = {'ba', 'ab', 'ba', 'ab'}
+
+local letter_batches = { {init,b,a},{init,a,b},{init,b,a}, {init,a,b}}
+local ytrad = {{{1,2}},{{2,1}},{{1,1}},{{2,1}}}
 
 local cardBatches = #letter_batches
 
@@ -40,21 +43,24 @@ for epoch = 1,maxEpoch do
    
    for i=1,cardBatches do
 
-      local x, y = letter_batches[i], {torch.Tensor({{ytrad[i]}})}
+      local x, y = letter_batches[i], torch.Tensor(ytrad[i]):t()
       local yhat = net:forward(x)
       local loss = crit:forward(yhat,y)
-      globalLoss = globalLoss + loss
       local delta = crit:backward(yhat,y)
-      print("x",x[2])
-      print("yhat1",yhat)
-      print("y",y[1])
+      globalLoss = globalLoss + loss
+      print("x",lol[i],i)
+      print("yhat",yhat[2])
+      print("y",y[2])
       print("loss",loss)
-      print("delta",delta)
-      io.read()
+      print("delta",delta[1])
+      print("delta",delta[2])
+
       net:zeroGradParameters()
       net:backward(x,delta)
       net:updateParameters(learning_rate)
+      
 
+      io.read()
       -- if epoch>5000 then
       --    print("x",x[2])
       --    print("yhat1",yhat)

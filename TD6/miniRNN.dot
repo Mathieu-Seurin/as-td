@@ -1,60 +1,86 @@
 digraph G {
-	graph [bb="0,0,394.09,783.1"];
+	graph [bb="0,0,570.5,936.48"];
 	node [label="\N",
 		shape=oval
 	];
 	n1	 [height=1.041,
 		label="DECODE1 (1)\nmodule = nn.gModule\lreverseMap = {}",
-		pos="197.05,148.43",
-		tooltip="[./creationRNN.lua]:60_",
-		width=2.7499];
-	n2	 [height=1.041,
-		label="Node2\ninput = {}\lreverseMap = {}",
-		pos="197.05,37.477",
-		tooltip="[[C]]:-1_",
-		width=2.1606];
-	n1 -> n2	 [pos="e,197.05,75.149 197.05,110.85 197.05,102.67 197.05,93.893 197.05,85.366"];
-	n3	 [height=1.3356,
-		label="GRU1 (3)\nmodule = nn.gModule\lreverseMap = {}\lmapindex = {Node4,Node5}",
-		pos="197.05,269.99",
+		pos="230.05,169.64",
 		tooltip="[./creationRNN.lua]:59_",
+		width=2.7499];
+	n2	 [height=1.3356,
+		label="Node2\ninput = {}\lmapindex = {Node1,Node3}\lreverseMap = {}",
+		pos="338.05,48.083",
+		tooltip="[[C]]:-1_",
 		width=3.457];
-	n3 -> n1	 [pos="e,197.05,186.02 197.05,221.74 197.05,213.29 197.05,204.5 197.05,196.07"];
-	n4	 [height=1.041,
-		label="Z ZE FIRST (4)\nmodule = nn.Identity\lreverseMap = {}",
-		pos="94.045,391.55",
+	n1 -> n2	 [pos="e,297.62,93.839 261.28,134.06 270.5,123.86 280.79,112.47 290.77,101.42"];
+	n3	 [height=1.041,
+		label="DECODE2 (3)\nmodule = nn.gModule\lreverseMap = {}",
+		pos="446.05,169.64",
+		tooltip="[./creationRNN.lua]:59_",
+		width=2.7499];
+	n3 -> n2	 [pos="e,378.47,93.839 414.81,134.06 405.59,123.86 395.3,112.47 385.32,101.42"];
+	n4	 [height=1.3356,
+		label="GRU1 (4)\nmodule = nn.gModule\lreverseMap = {}\lmapindex = {Node6,Node7}",
+		pos="230.05,423.37",
+		tooltip="[./creationRNN.lua]:58_",
+		width=3.457];
+	n4 -> n1	 [pos="e,230.05,207.17 230.05,375.02 230.05,329.83 230.05,262.17 230.05,217.23"];
+	n5	 [height=1.3356,
+		label="GRU2 (5)\nmodule = nn.gModule\lreverseMap = {}\lmapindex = {Node4,Node8}",
+		pos="446.05,291.2",
+		tooltip="[./creationRNN.lua]:58_",
+		width=3.457];
+	n4 -> n5	 [pos="e,379.9,332.07 296.32,382.43 319.96,368.19 346.74,352.05 371.06,337.39"];
+	n5 -> n3	 [pos="e,446.05,207.23 446.05,242.95 446.05,234.5 446.05,225.71 446.05,217.28"];
+	n6	 [height=1.041,
+		label="Z ZE FIRST (6)\nmodule = nn.Identity\lreverseMap = {}",
+		pos="94.045,544.93",
 		tooltip="[./creationRNN.lua]:53_",
 		width=2.6124];
-	n4 -> n3	 [pos="e,158.49,315.75 123.84,355.97 132.62,345.77 142.44,334.37 151.96,323.32"];
-	n5	 [height=1.041,
-		label="input1 (5)\nmodule = nn.Identity\lreverseMap = {}",
-		pos="300.05,391.55",
-		tooltip="[./creationRNN.lua]:58_",
+	n6 -> n4	 [pos="e,180.91,467.57 131.93,510.63 144.73,499.37 159.31,486.55 173.25,474.3"];
+	n7	 [height=1.041,
+		label="input1 (7)\nmodule = nn.Identity\lreverseMap = {}",
+		pos="300.05,544.93",
+		tooltip="[./creationRNN.lua]:57_",
 		width=2.6124];
-	n5 -> n3	 [pos="e,235.6,315.75 270.25,355.97 261.47,345.77 251.65,334.37 242.13,323.32"];
-	n6	 [height=1.3356,
-		label="Node6\ninput = {}\lselectindex = 1\lreverseMap = {}",
-		pos="102.05,513.11",
+	n7 -> n4	 [pos="e,257.14,470.65 279.23,508.38 273.93,499.32 268.09,489.36 262.36,479.56"];
+	n8	 [height=1.041,
+		label="input2 (8)\nmodule = nn.Identity\lreverseMap = {}",
+		pos="466.05,423.37",
+		tooltip="[./creationRNN.lua]:57_",
+		width=2.6124];
+	n8 -> n5	 [pos="e,453.27,339.24 460.42,385.76 458.69,374.49 456.74,361.78 454.84,349.46"];
+	n9	 [height=1.3356,
+		label="Node9\ninput = {}\lselectindex = 1\lreverseMap = {}",
+		pos="102.05,666.49",
 		tooltip="[[C]]:-1_-1",
 		width=2.1606];
-	n6 -> n4	 [pos="e,96.493,429.14 98.883,464.86 98.318,456.41 97.73,447.62 97.166,439.19"];
-	n7	 [height=1.3356,
-		label="Node7\ninput = {}\lselectindex = 2\lreverseMap = {}",
-		pos="292.05,513.11",
+	n9 -> n6	 [pos="e,96.493,582.52 98.883,618.24 98.318,609.79 97.73,601 97.166,592.57"];
+	n10	 [height=1.3356,
+		label="Node10\ninput = {}\lselectindex = 2\lreverseMap = {}",
+		pos="292.05,666.49",
 		tooltip="[[C]]:-1_-2",
 		width=2.1606];
-	n7 -> n5	 [pos="e,297.6,429.14 295.21,464.86 295.77,456.41 296.36,447.62 296.92,439.19"];
-	n8	 [height=1.041,
-		label="Node8\nreverseMap = {}\lnSplitOutputs = 2",
-		pos="189.05,634.67",
+	n10 -> n7	 [pos="e,297.6,582.52 295.21,618.24 295.77,609.79 296.36,601 296.92,592.57"];
+	n11	 [height=1.3356,
+		label="Node11\ninput = {}\lselectindex = 3\lreverseMap = {}",
+		pos="466.05,666.49",
+		tooltip="[[C]]:-1_-3",
+		width=2.1606];
+	n11 -> n8	 [pos="e,466.05,460.98 466.05,618.14 466.05,575.57 466.05,513.39 466.05,471.03"];
+	n12	 [height=1.041,
+		label="Node12\nreverseMap = {}\lnSplitOutputs = 3",
+		pos="292.05,788.05",
 		tooltip="[[C]]:-1_ split at [.../mathieu/torch/install/share/lua/5.1/nngraph/gmodule.lua]:96-mnode",
 		width=2.2392];
-	n8 -> n6	 [pos="e,133.5,557.34 163.65,598.77 156.06,588.34 147.58,576.68 139.39,565.43"];
-	n8 -> n7	 [pos="e,256.13,555.79 218.29,599.73 227.95,588.52 238.9,575.8 249.35,563.66"];
-	n9	 [height=1.041,
-		label="Node9\ninput = {}\lreverseMap = {}",
-		pos="189.05,745.62",
+	n12 -> n9	 [pos="e,155.86,701.35 245.08,757.5 220.79,742.21 190.82,723.35 164.6,706.85"];
+	n12 -> n10	 [pos="e,292.05,714.82 292.05,750.53 292.05,742.43 292.05,733.66 292.05,724.96"];
+	n12 -> n11	 [pos="e,414.67,702.79 336.4,756.57 357.66,741.97 383.42,724.26 406.36,708.5"];
+	n13	 [height=1.041,
+		label="Node13\ninput = {}\lreverseMap = {}",
+		pos="292.05,899",
 		tooltip="[[C]]:-1_",
 		width=2.1606];
-	n9 -> n8	 [pos="e,189.05,672.34 189.05,708.04 189.05,699.87 189.05,691.09 189.05,682.56"];
+	n13 -> n12	 [pos="e,292.05,825.72 292.05,861.42 292.05,853.24 292.05,844.47 292.05,835.94"];
 }

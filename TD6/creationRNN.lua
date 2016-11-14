@@ -54,7 +54,6 @@ function create_RNN(M,N)
    inputs[1] = z
 
    for t = 1,N do
-      print("here")
       inputs[t+1] = nn.Identity()():annotate{name='input'..t} -- (xt)
       z = gs[t]({z,inputs[t+1]}):annotate{name='GRU'..t} -- zt+1 = g(zt, xt+1)
       outputs[t] = ds[t](z):annotate{name='DECODE'..t}

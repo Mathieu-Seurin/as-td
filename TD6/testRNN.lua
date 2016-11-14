@@ -9,7 +9,7 @@ vocab = torch.load('vocab.t7')
 
 local batchSize = 1
 local M = 35
-local N = 2
+local N = 3
 local learning_rate = 0.01
 local maxEpoch = 10
 
@@ -44,8 +44,6 @@ for epoch = 1,maxEpoch do
    
    for i=1,cardBatches do
 
-      net:zeroGradParameters()
-
       local x, y = reformatBatch(data.x_batches[i],M,N,batchSize,ht)
       local yhat = net:forward(x)
 
@@ -64,7 +62,7 @@ for epoch = 1,maxEpoch do
       globalLoss = globalLoss + loss
       local delta = crit:backward(yhat,y)
 
-
+      net:zeroGradParameters()
       net:backward(x,delta)
       net:updateParameters(learning_rate)
 
