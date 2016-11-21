@@ -4,9 +4,11 @@ require 'model_utils'
 
 --======== ACTUAL MODEL
 -- GRU, D, whole RNN and Criterion
-function create_RNN(M,N)
+function create_RNN(M,N,T)
    
    --==== CREATING GRU
+   --========================
+
    local ht_1 = nn.Identity()():annotate{name='IN 1'}
    local x = nn.Identity()():annotate{name='IN 2'}
    
@@ -37,41 +39,52 @@ function create_RNN(M,N)
    --ht = GRU:forward({torch.rand(N),torch.rand(M)})
 
    --==== CREATING D function
+   --========================
+
    local in_d = nn.Identity()()
-   local out_d = nn.SoftMax()(nn.Linear(N,M)(in_d))
+   local out_d = nn.Linear(N,M)(in_d)
    
    local d = nn.gModule({in_d},{out_d})
 
    --res_test = d:forward(ht)
 
    --==== CREATING Network
-   local gs = clone_many_times(create_GRU(M,N),N+1)
-   local ds = clone_many_times(d,N+1)
+   --========================
+   local gs = clone_many_times(GRU,T+1)
+   local ds = clone_many_times(d,T+1)
 
    local inputs = {}
    local outputs = {}
    local z = nn.Identity()():annotate{name='Z ZE FIRST'}
    inputs[1] = z
 
-   for t = 1,N do
+   for t = 1,T do
       inputs[t+1] = nn.Identity()():annotate{name='input'..t} -- (xt)
       z = gs[t]({z,inputs[t+1]}):annotate{name='GRU'..t} -- zt+1 = g(zt, xt+1)
       outputs[t] = ds[t](z):annotate{name='DECODE'..t}
    end
 
    local model = nn.gModule(inputs,outputs)
-   --===== Prediction graph
-   -- local x = nn.Identity()()
-   -- local st = nn.Identity()()
-   
-   -- local zpred = gs[N+1]({st,x}) zt+1 = g(zt, xt+1)
-   -- local outpred = ds[N+1](zpred)
-   
-   -- local netPred = nn.gModule({st,x},{outpred,zpred})
-   -- ytest = netPred:forward({ht,res_test})
 
-   --Criterion
-   local c = loadCritRNN(N)
+
+   --===== Prediction graph
+   --========================
+   -- Adding a softmax at the end
+   -- to get a probability vector
+   
+   local x = nn.Identity()()
+   local st = nn.Identity()()
+   
+   local zpred = gs[T+1]({st,x}) --zt+1 = g(zt, xt+1)
+   local outpred = nn.SoftMax()(ds[T+1](zpred))   -- Adding Softmax to predict proba distribution
+   
+   local netPred = nn.gModule({st,x},{outpred,zpred})
+   --ytest = netPred:forward({ht,res_test})
+
+   --======= Criterion ======
+   --========================
+
+   local c = loadCritRNN(T)
    
    return model,c, netPred
 end

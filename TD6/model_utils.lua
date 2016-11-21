@@ -2,24 +2,24 @@ require 'torch'
 
 
 --======== TOOLS TO INTROSPECT AND LOAD
-function reformatBatch(batchRaw,M,N,batchSize,ht)
+function reformatBatch(batchRaw,M,N,batchSize,T)
 
    batchRaw = batchRaw:double():t()
    batch = {}
 
    --INIT or continue computing
-   batch[1] = ht or torch.zeros(batchSize,N)
+   batch[1] = torch.zeros(batchSize,N)
    
    --Reformat batch
-   for numN = 1,N do
+   for numT = 1,T do
       temp = torch.zeros(batchSize,M)
       for di = 1,batchSize do
-         temp[di][batchRaw[numN][di]] = 1
+         temp[di][batchRaw[numT][di]] = 1
       end
-      batch[numN+1] = temp
+      batch[numT+1] = temp
    end
 
-   batchRaw = batchRaw[{{2,N}}]
+   batchRaw = batchRaw[{{2,T}}]
    
    -- local iter = {}
    -- for count=1,M do
@@ -102,9 +102,9 @@ function file_exists(name)
    end
 end
 
-function loadCritRNN(N)
+function loadCritRNN(T)
    c = nn.ParallelCriterion()
-   for t = 1,N do
+   for t = 1,T-1 do
       crit = nn.CrossEntropyCriterion()
       crit.nll.sizeAverage = false
       c:add(crit)
