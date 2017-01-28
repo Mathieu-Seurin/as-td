@@ -16,6 +16,7 @@ function splitDataBatch(data,nInput,numLayer,batchSize)
    numFeat = data:size(2)
    numPred = nInput-numLayer
    numBatch = numEx-nInput
+
    
    batches={}
    for i=1,numBatch-batchSize+1,batchSize do
@@ -41,6 +42,7 @@ function splitDataBatch(data,nInput,numLayer,batchSize)
       batches[#batches]['x']:cuda()
       
    end
+
    return batches
 
 end

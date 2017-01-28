@@ -5,17 +5,17 @@ require 'cunn'
 
 local numFeatures = 128
 
-local batchSize = 1
-local learning_rate = 1e-2
+local batchSize = 15
+local learning_rate = 1e-3
 local maxEpoch = 10
 
-local numLayer = 20
-local nOutput = 2
+local numLayer = 7
+local nOutput = 20
 
 local nInput = numLayer+nOutput
 
-data = loadDummy()
---data = loadData('paco.mat')
+--data = loadDummy()
+data = loadData('paco.mat')
 
 local numEx = data:size(1)
 local numBatch = (numEx-nInput)/batchSize
@@ -24,9 +24,9 @@ batches=splitDataBatch(data,nInput,numLayer,batchSize)
 
 -- ========= LOADING OR CREATING NETWORK
 -- =====================================
-if file_exists(MODELDIR..'WaveNet.model'..numLayer) then
+if file_exists(MODELDIR..'WaveNet.model'..nInput) then
    print("Network alread exist, loading ...")
-   net = torch.load(MODELDIR..'WaveNet.model'..numLayer)
+   net = torch.load(MODELDIR..'WaveNet.model'..nInput)
    crit = loadCrit(nOutput)
 
 else
@@ -48,18 +48,26 @@ for epoch = 1,maxEpoch do
 
       local yhat = net:forward(x)
 
-      if i%10==0 then
-         local maxProba, indexMax = torch.max(yhat[{1,{},{}}],2)
-         print("id : ",indexMax:reshape(1,nOutput))
-         print("y", y:reshape(1,nOutput))
-      end
+      -- if i%10==0 then
+      --    print("yhat",yhat)
+         
+      --    local maxProba, indexMax = torch.max(yhat[{1,{},{}}],2)
+      --    print("id : ",indexMax:reshape(1,nOutput))
+      --    print("y", y[1]:reshape(1,nOutput))
+
+      --    io.read()
+      -- end
+
       
       yhat = yhat:reshape(nOutput,batchSize,numFeatures)
       y = y:reshape(nOutput,batchSize)
 
       local loss = crit:forward(yhat,y)
 
-      print(loss)
+      -- if i%100==0 then
+      --    print(loss)
+      -- end
+      
       globalLoss = globalLoss + loss
       local delta = crit:backward(yhat,y):reshape(batchSize,nOutput,numFeatures)
 
@@ -81,10 +89,10 @@ end
 
 -- ====== SAVING AND TESTING NETWORK ===
 -- =====================================
-torch.save(MODELDIR..'WaveNet.model'..numLayer, net)
+torch.save(MODELDIR..'WaveNet.model'..nInput, net)
 
 print("Testing Model :\n")
-numTest = math.floor(1000/nOutput)
+numTest = math.floor(10000/nOutput)
 print("Number of test", numTest)
 
 accuracy = 0

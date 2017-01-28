@@ -40,9 +40,8 @@ numIte = 4000
 
 print("Number of batches", cardBatches)
 print("Number of iteration",numIte)
+
 local ht = nil
-
-
 
 -- ========= TRAINING NETWORK =========
 -- =====================================

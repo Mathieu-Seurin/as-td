@@ -78,21 +78,32 @@ def createDummySet2():
     s = ms.stream.Stream()
     n1 = ms.note.Note()
     n1.pitch.name = 'E3'
-    n1.duration.type = 'quarter'
-    n1.duration.quarterLength
+    n1.duration.quarterLength=0.125
 
     n2 = ms.note.Note()
     n2.pitch.name = 'A3'
-    n2.duration.type = 'quarter'
-    n2.duration.quarterLength
+    n2.duration.quarterLength=0.125
 
-    for m in range(20):
+    n3 = ms.note.Note()
+    n3.pitch.name = 'C3'
+    n3.duration.quarterLength=0.125
+
+    n4 = ms.note.Note()
+    n4.pitch.name = 'C4'
+    n4.duration.quarterLength=0.125
+
+
+    for m in range(100):
         s.repeatAppend(n1,1)
         s.repeatAppend(n2,1)
+        s.repeatAppend(n3,1)
+        s.repeatAppend(n2,1)
+        s.repeatAppend(n4,1)
+
 
     s.show('text')
 
-    saveMusicToMat(s)
+    saveMusicToMat(s,'dummy')
 
     
 def saveMusicToMat(seq,fileName='dummy'):
