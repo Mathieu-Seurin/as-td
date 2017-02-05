@@ -1,10 +1,18 @@
 \begin{thebibliography}{}
 
-\bibitem[Nayebi and Vitelli, 2015]{nayebigruv}
-Nayebi, A. and Vitelli, M. (2015).
-\newblock Gruv: Algorithmic music generation using recurrent neural networks.
+\bibitem[Hadjeres et~al., 2016]{hadj16}
+Hadjeres, G., Sakellariou, J., and Pachet, F. (2016).
+\newblock Style imitation and chord invention in polyphonic music with
+  exponential families.
+\newblock {\em CoRR}, abs/1609.05152.
 
-\bibitem[van~den Oord et~al., 2016]{DBLP:journals/corr/OordDZSVGKSK16}
+\bibitem[Raitio et~al., 2011]{Raitio:2011:HSS:2209821.2210690}
+Raitio, T., Suni, A., Yamagishi, J., Pulakka, H., Nurminen, J., Vainio, M., and
+  Alku, P. (2011).
+\newblock Hmm-based speech synthesis utilizing glottal inverse filtering.
+\newblock {\em Trans. Audio, Speech and Lang. Proc.}, 19(1):153--165.
+
+\bibitem[van~den Oord et~al., 2016]{wavenet}
 van~den Oord, A., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A.,
   Kalchbrenner, N., Senior, A.~W., and Kavukcuoglu, K. (2016).
 \newblock Wavenet: {A} generative model for raw audio.
@@ -16,10 +24,5 @@ Zen, H., Agiomyrgiannakis, Y., Egberts, N., Henderson, F., and Szczepaniak, P.
 \newblock Fast, compact, and high quality {LSTM-RNN} based statistical
   parametric speech synthesizers for mobile devices.
 \newblock {\em CoRR}, abs/1606.06061.
-
-\bibitem[Zen et~al., 2009]{zen2009statistical}
-Zen, H., Tokuda, K., and Black, A.~W. (2009).
-\newblock Statistical parametric speech synthesis.
-\newblock {\em Speech Communication}, 51(11):1039--1064.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.28)  27 JAN 2017 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.28)  4 FEB 2017 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -491,25 +491,28 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
-(./SeurinRapport.aux)
+(./SeurinRapport.aux
+
+LaTeX Warning: Label `fig:noteRepr' multiply defined.
+
+)
 \openout1 = `SeurinRapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count98
 \scratchdimen=\dimen109
@@ -538,7 +541,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 17.
+Package hyperref Info: Link coloring OFF on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -548,22 +551,22 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count104
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
 
 (./SeurinRapport.out) (./SeurinRapport.out)
 \@outlinefile=\write3
 \openout3 = `SeurinRapport.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 20.
+(Font)              <12> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 20.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 20.
+(Font)              <6> on input line 19.
 
-Overfull \hbox (12.82928pt too wide) in paragraph at lines 33--34
+Overfull \hbox (12.82928pt too wide) in paragraph at lines 32--33
 \T1/cmr/m/n/10 L'approche WaveNet est celle d'un mod-èle paramétrique, avec bas
 e d'apprentissage.
  []
@@ -572,62 +575,87 @@ e d'apprentissage.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 38.
+(Font)              <7> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 38.
+(Font)              <5> on input line 37.
 
-<modelSimple.png, id=38, 1459.4525pt x 481.8pt>
+<modelSimple.png, id=62, 1459.4525pt x 481.8pt>
 File: modelSimple.png Graphic file (type png)
  <use modelSimple.png>
-Package pdftex.def Info: modelSimple.png used on input line 41.
+Package pdftex.def Info: modelSimple.png used on input line 40.
 (pdftex.def)             Requested size: 291.88533pt x 96.35829pt.
 
-<modelDilate.png, id=41, 1674.255pt x 553.06625pt>
+<modelDilate.png, id=65, 1674.255pt x 553.06625pt>
 File: modelDilate.png Graphic file (type png)
  <use modelDilate.png>
-Package pdftex.def Info: modelDilate.png used on input line 52.
+Package pdftex.def Info: modelDilate.png used on input line 51.
 (pdftex.def)             Requested size: 334.84506pt x 110.61128pt.
 
-[2 <./modelSimple.png> <./modelDilate.png>] (./SeurinRapport.bbl [3])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+[2 <./modelSimple.png> <./modelDilate.png>]
+Overfull \hbox (1.31046pt too wide) in paragraph at lines 63--64
+[]\T1/cmr/m/n/10 En généra-tion : L'initialisation se fait avec une séquence de
+ notes (générale-
+ []
 
-(./SeurinRapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
+[3] <noteRepr.png, id=90, 843.15pt x 146.5475pt>
+File: noteRepr.png Graphic file (type png)
+ <use noteRepr.png>
+Package pdftex.def Info: noteRepr.png used on input line 84.
+(pdftex.def)             Requested size: 337.25401pt x 58.61795pt.
+ [4 <./noteRepr.png>] <seq2.png, id=105, 831.105pt x 157.58875pt>
+File: seq2.png Graphic file (type png)
+ <use seq2.png>
+Package pdftex.def Info: seq2.png used on input line 124.
+(pdftex.def)             Requested size: 249.33342pt x 47.27698pt.
+ [5 <./seq2.png>] <seq6.png, id=117, 746.79pt x 97.36375pt>
+File: seq6.png Graphic file (type png)
+ <use seq6.png>
+Package pdftex.def Info: seq6.png used on input line 172.
+(pdftex.def)             Requested size: 448.07745pt x 58.41869pt.
+
+Overfull \hbox (103.07745pt too wide) in paragraph at lines 172--174
+[][]
+ []
+
+[6 <./seq6.png>] (./SeurinRapport.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+ (./SeurinRapport.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package rerunfilecheck Info: File `SeurinRapport.out' has not changed.
+(rerunfilecheck)             Checksum: BE04D05AF6E72CC3DC120C5389628248;768.
 
 
-Package rerunfilecheck Warning: File `SeurinRapport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: Checksums for `SeurinRapport.out':
-(rerunfilecheck)             Before: AF604812FE3639EF0EB99CBE38595860;252
-(rerunfilecheck)             After:  946F709DC73A0A937AD449476201305C;251.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 5678 strings out of 494953
- 80948 string characters out of 6180977
- 161146 words of memory out of 5000000
- 8891 multiletter control sequences out of 15000+600000
- 11676 words of font info for 30 fonts, out of 8000000 for 9000
+ 5722 strings out of 494953
+ 81459 string characters out of 6180977
+ 162642 words of memory out of 5000000
+ 8916 multiletter control sequences out of 15000+600000
+ 12452 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,6n,28p,1078b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,28p,1078b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/mathieu/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home
-/mathieu/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/mathieu/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/mathieu/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/mathieu/.texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecrm1200.600pk> </home/mathieu/.texmf-var/fonts/pk/ljfour/
-jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on SeurinRapport.pdf (4 pages, 346331 bytes).
+/mathieu/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/mathieu/
+.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/mathieu/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/mathieu/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecbx1440.600pk> </home/mathieu/.texmf-var/fonts/pk/ljfour/
+jknappen/ec/ecrm1200.600pk> </home/mathieu/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on SeurinRapport.pdf (7 pages, 428272 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 420 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

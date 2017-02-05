@@ -1,4 +1,10 @@
 \BOOKMARK [1][-]{section.1}{WaveNet : G\351n\351ration de son}{}% 1
 \BOOKMARK [1][-]{section.2}{L'approche de WaveNet}{}% 2
-\BOOKMARK [1][-]{section.3}{Plan d'exp\351rience}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Donn\351es utilis\351es}{section.3}% 4
+\BOOKMARK [1][-]{section.3}{Exp\351riences mises en place}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Repr\351sentation des donn\351es}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Crit\350re d'\351valuation}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Crit\350re de dissonance}{subsection.3.2}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Crit\350re de cr\351ativit\351}{subsection.3.2}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Exp\351riences sur donn\351es jouets}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Donn\351es r\351elles : Musique flamenco \340 la guitare}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Conclusion et Perspectives}{}% 10

@@ -1,9 +1,0 @@
-require 'nn'
-
-
-
-N = 2
-sizeOut = 2
-
-model = nn.Sequential()
-model.add(nn.Linear(N,sizeOut))

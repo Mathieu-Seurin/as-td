@@ -5,34 +5,44 @@ require 'cunn'
 
 local numFeatures = 128
 
-local batchSize = 15
+local batchSize = 30
 local learning_rate = 1e-3
 local maxEpoch = 10
 
-local numLayer = 7
-local nOutput = 20
+local numLayer = 2
+local nInput = 21
 
-local nInput = numLayer+nOutput
+local filterSz = 2
+local filterStride = 1
 
+-- ========= LOADING OR CREATING NETWORK
+-- =====================================
+if file_exists(MODELDIR..'WaveNet'..numLayer..'lay'..filterSz..'.model') then
+   print("Network alread exist, loading ...")
+   net = torch.load(MODELDIR..'WaveNet'..numLayer..'lay'..filterSz..'.model')
+
+   seqX = torch.zeros(1,nInput,128)
+   res = net:forward(seqX)
+   nOutput = res:size(2)
+   print("nOutput",nOutput)
+   crit = loadCrit(nOutput)
+
+else
+   print("Network doesn't exist, creating ...")
+   net, crit = createModel(nInput,numLayer, filterSz, filterStride)
+end
+
+
+-- ========= LOADING DATASET ==========
+-- =====================================
+      
 --data = loadDummy()
 data = loadData('paco.mat')
 
 local numEx = data:size(1)
 local numBatch = (numEx-nInput)/batchSize
 
-batches=splitDataBatch(data,nInput,numLayer,batchSize)
-
--- ========= LOADING OR CREATING NETWORK
--- =====================================
-if file_exists(MODELDIR..'WaveNet.model'..nInput) then
-   print("Network alread exist, loading ...")
-   net = torch.load(MODELDIR..'WaveNet.model'..nInput)
-   crit = loadCrit(nOutput)
-
-else
-   print("Network doesn't exist, creating ...")
-   net, crit = createModel(nInput,numLayer)
-end
+batches=splitDataBatch(data,nInput,nOutput,numLayer,batchSize)
 
 -- ========= TRAINING NETWORK =========
 -- =====================================
@@ -48,15 +58,14 @@ for epoch = 1,maxEpoch do
 
       local yhat = net:forward(x)
 
-      -- if i%10==0 then
-      --    print("yhat",yhat)
+      if i%10==0 then
+         print("yhat",yhat)
          
-      --    local maxProba, indexMax = torch.max(yhat[{1,{},{}}],2)
-      --    print("id : ",indexMax:reshape(1,nOutput))
-      --    print("y", y[1]:reshape(1,nOutput))
+         local maxProba, indexMax = torch.max(yhat[{1,{},{}}],2)
+         print("id : ",indexMax:reshape(1,nOutput))
+         print("y", y[1]:reshape(1,nOutput))
 
-      --    io.read()
-      -- end
+      end
 
       
       yhat = yhat:reshape(nOutput,batchSize,numFeatures)
@@ -83,15 +92,15 @@ for epoch = 1,maxEpoch do
    end
 
    print("globalLoss",globalLoss)
-   print("LOSS ITERATION N°",epoch,' : ',globalLoss/numBatch/batchSize)
+   print("LOSS ITERATION N°",epoch,' : ',globalLoss/numBatch/batchSize/nOutput)
 
 end
 
 -- ====== SAVING AND TESTING NETWORK ===
 -- =====================================
-torch.save(MODELDIR..'WaveNet.model'..nInput, net)
+torch.save(MODELDIR..'WaveNet'..numLayer..'lay'..filterSz..'.model', net)
 
-print("Testing Model :\n")
+print("\nTesting Model :")
 numTest = math.floor(10000/nOutput)
 print("Number of test", numTest)
 

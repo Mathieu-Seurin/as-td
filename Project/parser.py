@@ -101,7 +101,7 @@ def createDummySet2():
         s.repeatAppend(n4,1)
 
 
-    s.show('text')
+    s.show()
 
     saveMusicToMat(s,'dummy')
 
@@ -133,16 +133,32 @@ def parseSeq(fileName):
     listNote = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B']
     s = ms.stream.Stream()
 
-    seq = sio.loadmat(fileName+'.mat')['x']
+    if fileName[-4:] == '.mat':
+        seq = sio.loadmat(fileName)['x']
+    else:
+        seq = sio.loadmat(fileName+'.mat')['x']
 
-    for elem in seq:
+
+    elem_1 = 'lol'
+    numTimes = 1
+    
+    for i,elem in enumerate(seq):
 
         n = ms.note.Note()
         octave, note = divmod(elem[0],12)
         n.pitch.name = listNote[int(note)-1]+str(int(octave))
-        n.duration.type = 'eighth'
+        print("pitch.name",n.pitch.name)
+        
+        if n.pitch.name==elem_1 and i%32!=0:
+            numTimes += 1
+        else:
+            n.duration.quarterLength = 0.125*numTimes
 
-        s.append(n)
+            elem_1 = n.pitch.name
+            numTimes = 1
+            print("elem-1 : APPEND",elem_1)
+            print("n.duration",n.duration.quarterLength)
+            s.append(n)
 
     s.show()
 

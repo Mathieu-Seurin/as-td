@@ -4,12 +4,12 @@ require 'io'
 require 'cunn'
 
 
-function predictUsingWave(predNet,sizeSeq,nInput,numLayer)
+function predictUsingWave(predNet,sizeSeq,nInput,nOutput,numLayer)
    
    data = loadData('paco.mat')
-   batches=splitDataBatch(data,nInput,numLayer,1)
+   batches=splitDataBatch(data,nInput,nOutput,numLayer,1)
 
-   baseSeq = batches[10]['x']
+   baseSeq = batches[1]['x']
 
    numFeat = 128
    generatedSeq = {}
@@ -42,13 +42,14 @@ function predictUsingWave(predNet,sizeSeq,nInput,numLayer)
 
 end
 
-local nOutput = 20
-local numLayer = 7
+local nOutput = 19
+local numLayer = 2
+local nInput = 21
 
-local nInput = numLayer+nOutput
+local filterSz = 2
+local sizeSeq = 256
 
-local sizeSeq = 150
-net = torch.load(MODELDIR..'WaveNet.model'..nInput)
+net = torch.load(MODELDIR..'WaveNet'..numLayer..'lay'..filterSz..'.model')
 
-predictUsingWave(net,sizeSeq,nInput,numLayer)
+predictUsingWave(net,sizeSeq,nInput,nOutput,numLayer)
 

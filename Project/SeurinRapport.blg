@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: SeurinRapport.aux
 The style file: apalike.bst
 Database file #1: SeurinRapport.bib
-Warning--empty journal in nayebigruv
 You've used 4 entries,
             1935 wiz_defined-function locations,
-            495 strings with 4550 characters,
-and the built_in function-call counts, 1697 in all, are:
-= -- 153
-> -- 107
-< -- 1
-+ -- 38
-- -- 38
-* -- 155
-:= -- 317
-add.period$ -- 11
+            495 strings with 4683 characters,
+and the built_in function-call counts, 1838 in all, are:
+= -- 163
+> -- 132
+< -- 0
++ -- 48
+- -- 48
+* -- 173
+:= -- 348
+add.period$ -- 12
 call.type$ -- 4
-change.case$ -- 39
+change.case$ -- 44
 chr.to.int$ -- 4
-cite$ -- 5
+cite$ -- 4
 duplicate$ -- 53
-empty$ -- 93
-format.name$ -- 44
-if$ -- 310
+empty$ -- 91
+format.name$ -- 52
+if$ -- 332
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 4
-newline$ -- 22
+newline$ -- 23
 num.names$ -- 12
-pop$ -- 34
+pop$ -- 36
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 44
 quote$ -- 0
 skip$ -- 44
 stack$ -- 0
-substring$ -- 79
-swap$ -- 3
+substring$ -- 73
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 24
-warning$ -- 1
+warning$ -- 0
 while$ -- 10
 width$ -- 0
-write$ -- 51
-(There was 1 warning)
+write$ -- 54

@@ -10,7 +10,7 @@ function loadCrit(nOutput)
    
 end
 
-function createModel(nInput, numLayer)
+function createModel(nInput, numLayer, filterSz, filterStride)
    assert(nInput,"Need sizeInput (for criterion)")
    
    local inputFrameSize = 128
@@ -18,18 +18,31 @@ function createModel(nInput, numLayer)
    --fixed, number of note possible
 
    local numLayer = numLayer or 7
-   local nOutput = nInput-numLayer
 
-   local kw = 2
-   local dw = 1
+   local kw = filterSz
+   local dw = filterStride
 
    local model = nn.Sequential()
 
    for lay=1,numLayer do
-      model:add(nn.TemporalConvolution(inputFrameSize,outputFrameSize,kw,dw))
+      if lay==1 then
+         model:add(nn.TemporalConvolution(inputFrameSize,outputFrameSize,kw,dw))
+         model:add(nn.ReLU())
+      else
+         model:add(nn.TemporalConvolution(inputFrameSize,outputFrameSize,2,1))
+         model:add(nn.ReLU())
+
+      end
    end
 
-   return model, loadCrit(nOutput)
+   seqX = torch.zeros(1,nInput,inputFrameSize)
+   res = model:forward(seqX)
+
+   nOutput = res:size(2)
+
+   print("Time window :",nInput-nOutput)
+   
+   return model, loadCrit(nOutput), nOutput
 
 end
 
